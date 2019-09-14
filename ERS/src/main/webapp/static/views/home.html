@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ERS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/styles/override.css">
+  </head>
+  <body>
+    <h1 class="jumbotron text-center">Welcome to ERS</h1>
+    <nav class = "navbar navbar-dark bg-dark text-center">
+      <nav class = "col">
+       <a href="home"><button class="navbar-text btn home">Home</button></a>
+      </nav>
+      <nav class = "col">
+        <a href= "employee_home"><button class="navbar-text btn">Employees</button></a>
+      </nav>
+      <nav class = "col">
+        <a href= "manager_home"><button class="navbar-text btn">Managers</button></a>
+      </nav>
+      <nav class = "col">
+        <a href= "administrator_home"><button class="navbar-text btn">Administrators</button></a>
+      </nav>
+      <nav class = "col">
+        <a href= "help"><button class="navbar-text btn">Help</button></a>
+      </nav>
+      <nav class = "col">
+        <a href= "about"><button class="navbar-text btn">About</button></a>
+      </nav>
+    </nav>
+      <div class="row text-center">
+        <div class="col">
+          <h3>What is ERS?</h3>
+          <p>ERS is a website meant to make submitting and approving expense reimbursements easier for both employees
+          and managers. </p>
+          <h3>Request Account</h3>
+          <p>Click below to request an account. Accounts are subject to approval by a superior.</p>
+          <a href = "new_account"><button class="btn btn-primary" type="button" name="request-account">Request</button></a>
+        </div>
+        <div class="col">
+          <h3>Employees</h3>
+          <p>Employees are able to submit expense reimbursement requests and view their pending and completed reimbursements.</p>
+          <h3>Managers</h3>
+          <p>Managers are able to approve or disapprove expense reimbursements requests and view employee information.</p>
+          <h3>Administrators</h3>
+          <p>Administrators are able to override reimbursement approvals or disaprovals and are able to approve manager account creation.</p>
+        </div>
+        <div class="col">
+          <h3>Login</h3>
+          <div class="container">
+            <div class="row">
+              <div class="col text-left">
+                  <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" name="email" id="email">
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" name="password" id = "password">
+                  </div>
+                  <button class="btn btn-success" id="login">Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    <script src="static/scripts/home.js"></script>
+  </body>
+</html>
