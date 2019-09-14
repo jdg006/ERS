@@ -13,6 +13,7 @@ function sendAjaxGet(url, callback){
 	xhr.setRequestHeader("Authorization",token);
 	
 	xhr.onreadystatechange = function(){
+		
 		if(xhr.readyState===4 && xhr.status===200){
 			callback(xhr.response);
 		}
