@@ -29,8 +29,8 @@ public class ViewDelegate {
 		case "/new_account":
 			request.getRequestDispatcher("/static/views/new_account.html").forward(request, response);
 			break;
-		case "/about":
-			request.getRequestDispatcher("/static/views/about.html").forward(request, response);
+		case "/all_employees":
+			request.getRequestDispatcher("/static/views/all_employees.html").forward(request, response);
 			break;
 		case "/help":
 			request.getRequestDispatcher("/static/views/help.html").forward(request, response);

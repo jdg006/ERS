@@ -11,6 +11,10 @@ public class Info {
 	private String imgSrc;
 	private int userId;
 	
+	public Info() {
+		super();
+	}
+	
 	public Info(int id, String firstName, String lastName, String phone, String address, String position, String imgSrc,
 			int userId) {
 		super();

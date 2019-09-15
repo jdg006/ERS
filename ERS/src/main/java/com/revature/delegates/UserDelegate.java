@@ -69,10 +69,22 @@ public class UserDelegate {
 		User user = us.getUser(id);
 		user.setApproved(approved);
 		user.setSuperiorId(manager.getId());
+		
+		Info info = is.getInfoByUserId(user.getId());
+		
 		boolean updated = us.updateUser(user.getId(), user);
+		
+		try(PrintWriter pw = response.getWriter()){
+			pw.write("[");
+			pw.write(new ObjectMapper().writeValueAsString(user));
+			pw.write(",");
+			pw.write(new ObjectMapper().writeValueAsString(info));	
+			pw.write("]");	
+		}
 		
 		if (updated) {
 			response.setStatus(200);
+			
 		}
 		else {
 			response.setStatus(500);

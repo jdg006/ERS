@@ -61,6 +61,7 @@ public class RequestHelper {
 				response.sendError(404, "record not supported");
 			}
 		} else {
+			System.out.println("routed to view delegate");
 			vd.returnView(request, response);
 		}
 	}

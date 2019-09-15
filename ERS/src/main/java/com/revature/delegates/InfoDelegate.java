@@ -44,11 +44,22 @@ public class InfoDelegate {
 	
 	public void updateInfo(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
 		
+		String token = request.getHeader("Authorization");
+		String[] tokenArr = token.split(":");
+		int userId = us.getUser(tokenArr[0]).getId();
+		int infoId = is.getInfoByUserId(userId).getId();
+		System.out.println(userId);
+		System.out.println(infoId);
+		
 		String infoJSON = request.getReader().readLine();
 		ObjectMapper om = new ObjectMapper();
 		Info info = om.readValue(infoJSON, Info.class);
-		boolean updated = is.updateInfo(info.getId(), info);
+		info.setUserId(userId);
+		info.setId(infoId);
 		
+		System.out.println(info);
+		boolean updated = is.updateInfo(info.getId(), info);
+		System.out.println(updated);
 		if (updated) {
 			response.setStatus(200);
 		}

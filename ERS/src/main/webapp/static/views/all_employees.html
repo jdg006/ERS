@@ -2,14 +2,13 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>ERS</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="static/styles/override.css">
   </head>
   <body>
-    <body>
-      <h1 class="jumbotron text-center">Administrator</h1>
-      <nav class = "navbar navbar-dark bg-dark text-center">
+    <h1 class="jumbotron text-center">All Employees</h1>
+    <nav class = "navbar navbar-dark bg-dark text-center">
       <nav class = "col">
        <a href="home"><button class="navbar-text btn home">Home</button></a>
       </nav>
@@ -29,6 +28,34 @@
         <a href= "home"><button class="navbar-text btn" id="logout">Logout</button></a>
       </nav>
     </nav>
-	<script src="static/scripts/administrator_home.js"></script>
+    <div class="row">
+    	<div class = "col">
+	    	<h3>Employees</h3>
+	    	<table class = "table table-bordered" id = "employee-list">
+	    	<tr>
+	    		<th>Name</th>
+	    		<th>Email</th>
+	    		<th>Position</th>
+	    		<th>Phone</th>
+	    		<th>Address</th>
+	    	</tr>
+	    	</table>
+	    </div>
+    	<div class ="col">
+	    	<h3>Unapproved Accounts</h3>
+	    	<table class = "table table-bordered" id = "unapproved-accounts">
+	    	<tr>
+	    		<th>Name</th>
+	    		<th>Email</th>
+	    		<th>Position</th>
+	    		<th>Approve</th>
+	    		<th>Deny</th>
+	    	</tr>
+	    	</table>
+	    </div>
+	    
+    </div>
+      
+    <script src="static/scripts/all_employees.js"></script>
   </body>
 </html>

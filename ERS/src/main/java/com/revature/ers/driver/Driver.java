@@ -91,6 +91,8 @@ public class Driver {
 		
 		
 		//System.out.println(idi.getInfoByUserId(17));
+		//Info info1 = new Info("bill", "Billson", "71717171717", "this is an address", "proletariate","http://words.com", 3);
+		
 	}
 
 }

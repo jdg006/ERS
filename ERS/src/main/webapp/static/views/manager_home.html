@@ -13,26 +13,44 @@
        <a href="home"><button class="navbar-text btn home">Home</button></a>
       </nav>
       <nav class = "col">
-        <a href= "employee_home"><button class="navbar-text btn">Employees</button></a>
+        <button class="navbar-text btn" id="nav-emp">Employees</button>
       </nav>
       <nav class = "col">
-        <a href= "manager_home"><button class="navbar-text btn">Managers</button></a>
+        <button class="navbar-text btn" id ="nav-man">Managers</button>
       </nav>
       <nav class = "col">
-        <a href= "administrator_home"><button class="navbar-text btn">Administrators</button></a>
+        <button class="navbar-text btn" id= "nav-admin">Administrators</button>
       </nav>
       <nav class = "col">
-        <a href= "help"><button class="navbar-text btn">Help</button></a>
+        <button class="navbar-text btn" id="nav-comp">Companies</button>
       </nav>
       <nav class = "col">
         <a href= "home"><button class="navbar-text btn" id="logout">Logout</button></a>
       </nav>
     </nav>
     <div class = "row text-center">
-	    <div class ="col">
+    <div class ="col">
 	    	<h3>Info</h3>
 	    	<div id="info-container">
+	    		<p id="name"></p>
+	    		<p id="position"></p>
+	    		<p id="email"></p>
+	    		<p id="phone"></p>
+	    		<p id="address"></p>
 	    	</div>
+	    </div>
+	</div>
+    <div class = "row text-center">
+    	<div class ="col">
+	    	<h3>Resolved Reimbursements</h3>
+	    	<table class = "table table-bordered" id = "resolved-reimbursements">
+                	<tr>
+                		<th>Amount</th>
+                		<th>Date</th>
+                		<th>Reason</th>
+                		<th>Status</th>
+                	</tr>
+                </table>
 	    </div>
 	    <div class ="col">
 	    	<h3>Pending Reimbursements</h3>
@@ -47,46 +65,8 @@
                 </tr>
              </table>
 	    </div>
-	    <div class ="col">
-	    	<h3>Resolved Reimbursements</h3>
-	    	<table class = "table table-bordered" id = "resolved-reimbursements">
-                	<tr>
-                		<th>Amount</th>
-                		<th>Date</th>
-                		<th>Reason</th>
-                		<th>Status</th>
-                	</tr>
-                </table>
-	    </div>
 	    
-    </div>  
-    <div class="row">
-    <div class ="col">
-	    	<h3>Unapproved Accounts</h3>
-	    	<table class = "table table-bordered" id = "unapproved-accounts">
-	    	<tr>
-	    		<th>Name</th>
-	    		<th>Email</th>
-	    		<th>Position</th>
-	    		<th>Approve</th>
-	    		<th>Deny</th>
-	    	</tr>
-	    	</table>
-	    </div>
-	    <div class = "col">
-	    	<h3>Employees</h3>
-	    	<table class = "table table-bordered" id = "employee-list">
-	    	<tr>
-	    		<th>Name</th>
-	    		<th>Email</th>
-	    		<th>Position</th>
-	    		<th>Phone</th>
-	    		<th>Address</th>
-	    	</tr>
-	    	</table>
-	    </div>
-    </div>    
-          
+    </div>          
     <script src="static/scripts/manager_home.js"></script>
   </body>
 </html>

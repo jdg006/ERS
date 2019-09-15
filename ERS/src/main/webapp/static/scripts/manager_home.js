@@ -1,35 +1,98 @@
-document.getElementById("logout").addEventListener("click", logout);
-let userApproveButtons; 
-let userDenyButtons;
+let token = sessionStorage.getItem("token");
+
 let reimbApproveButtons;
 let reimbDenyButtons;
-let getReimbursementUrl = "http://localhost:8080/ERS/api/company_reimbursements";
 let getEmployeesUrl = "http://localhost:8080/ERS/api/company_employees";
-let updateUserUrl = "http://localhost:8080/ERS/update_user";
+let getReimbursementUrl = "http://localhost:8080/ERS/api/company_reimbursements";
 let updateReimbUrl = "http://localhost:8080/ERS/update_reimbursement";
-let deleteUserUrl = "http://localhost:8080/ERS/delete_user";
-let token = sessionStorage.token;
-sendAjaxGet(getEmployeesUrl, setEmployees);
+let managerInfoUrl = "http://localhost:8080/ERS/api/set_employee";
+
+document.getElementById("nav-emp").addEventListener("click", navEmp);
+document.getElementById("nav-man").addEventListener("click", navMan);
+document.getElementById("nav-admin").addEventListener("click", navAdmin);
+document.getElementById("nav-comp").addEventListener("click", navComp);
+document.getElementById("logout").addEventListener("click", logout);
+
+function navEmp(){
+	let permissionLevel = token.split(":")[1];
+	if(permissionLevel == 0){
+		window.location.href = "http://localhost:8080/ERS/employee_home";
+	}
+	else if(permissionLevel == 1){
+		window.location.href = "http://localhost:8080/ERS/all_employees";
+	}
+	else if(permissionLevel == 2){
+		window.location.href = "http://localhost:8080/ERS/all_employees";
+	}
+	else{
+		alert("You are not signed in. Log in or create an account.");
+		window.location.href = "http://localhost:8080/ERS/home";
+	}
+}
+function navMan(){
+	let permissionLevel = token.split(":")[1];
+	if(permissionLevel == 0){
+		alert("You do not have access to manager pages.");
+		window.location.href = "http://localhost:8080/ERS/employee_home";
+	}
+	else if(permissionLevel == 1){
+		window.location.href = "http://localhost:8080/ERS/manager_home";
+	}
+	else if(permissionLevel == 2){
+		window.location.href = "http://localhost:8080/ERS/all_managers";
+	}
+	else{
+		alert("You are not signed in. Log in or create an account.");
+		window.location.href = "http://localhost:8080/ERS/home";
+	}
+}
+function navAdmin(){
+	let permissionLevel = token.split(":")[1];
+	if(permissionLevel == 0){
+		alert("You do not have access to admin pages.");
+		window.location.href = "http://localhost:8080/ERS/employee_home";
+	}
+	else if(permissionLevel == 1){
+		alert("You do not have access to admin pages.");
+		window.location.href = "http://localhost:8080/ERS/manager_home";
+	}
+	else if(permissionLevel == 2){
+		window.location.href = "http://localhost:8080/ERS/administrator_home";
+	}
+	else{
+		alert("You are not signed in. Log in or create an account.");
+		window.location.href = "http://localhost:8080/ERS/home";
+	}
+}
+function navComp(){
+	let permissionLevel = token.split(":")[1];
+	if(permissionLevel == 0){
+		alert("You do not have access to company pages.");
+		window.location.href = "http://localhost:8080/ERS/employee_home";
+	}
+	else if(permissionLevel == 1){
+		alert("You do not have access to company pages.");
+		window.location.href = "http://localhost:8080/ERS/manager_home";
+	}
+	else if(permissionLevel == 2){
+		window.location.href = "http://localhost:8080/ERS/my_company";
+	}
+	else{
+		window.location.href = "http://localhost:8080/ERS/companie_home";
+	}
+}
+function logout(){
+	sessionStorage.token = null;
+}
+
+sendAjaxGet(getReimbursementUrl, setReimbursements);
 
 function buttonSet(){
-	 userApproveButtons = document.getElementsByClassName("user-approve")
-	 userDenyButtons = document.getElementsByClassName("user-deny");
 	 reimbButtons = document.getElementsByClassName("reimb-btn");
 	 
-	 for(let uab of userApproveButtons){
-		uab.addEventListener("click", approveUser);
-		}
-	 for(let udb of userDenyButtons){
-		udb.addEventListener("click", denyUser); 
-	 }
 	 for(let rab of reimbButtons){
 		 rab.addEventListener("click", decideReimb);
 	 }
-	 
-}
-
-function logout(){
-	sessionStorage.token = null;
 }
 
 function sendAjaxGet(url, callback){
@@ -136,107 +199,8 @@ function setReimbursements(response){
 		}
 	}
 	buttonSet();
+	sendAjaxGet(managerInfoUrl, setInfo);
 }
-
-function setEmployees(response){
-	
-	let tokenArr = token.split(":");
-	let manEmail = tokenArr[0];
-	
-	let responseArray = JSON.parse(response);
-	let users = responseArray[0];
-	let allInfo = responseArray[1];
-	let unapprovedAccounts = document.getElementById("unapproved-accounts");
-	let employees = document.getElementById("employee-list");
-	
-	for(let i = 0; i < users.length; i++ ){
-		let row = document.createElement("row");
-		let nameTd = document.createElement("td");
-		let emailTd = document.createElement("td");
-		let positionTd = document.createElement("td");
-		let name = allInfo[i].firstName +" "+allInfo[i].lastName;
-		let email = users[i].email;
-		let position = users[i].position;
-		row.id = "user"+users[i].id;
-		nameTd.innerHTML = name;
-		emailTd.innerHTML = email;
-		positionTd.innerHTML = position;
-		row.appendChild(nameTd);
-		row.appendChild(emailTd);
-		row.appendChild(positionTd);
-		
-		if(users[i].email === manEmail){
-			setInfo(users[i], allInfo[i]);
-		}
-		else if(users[i].approved === false){
-			let approveButton = document.createElement("button");
-			let denyButton = document.createElement("button");
-			approveButton.innerHTML = "Approve";
-			denyButton.innerHTML = "Deny"
-			approveButton.className = "btn btn-success user-approve";
-			denyButton.className = "btn btn-danger user-deny";
-			approveButton.id = `app-${users[i].id}`;
-			denyButton.id = `deny-${users[i].id}`;
-			let appTd = document.createElement("td");
-			let denTd = document.createElement("td");
-			appTd.appendChild(approveButton);
-			denTd.appendChild(denyButton);
-			row.appendChild(appTd);
-			row.appendChild(denTd);
-			unapprovedAccounts.appendChild(row);
-		}
-		else{
-			let phoneTd = document.createElement("td");
-			let addressTd = document.createElement("td");
-			let address = allInfo[i].address;
-			let phone = allInfo[i].phone;
-			phoneTd.innerHTML = phone;
-			addressTd.innerHTML = address;
-			row.appendChild(nameTd);
-			row.appendChild(emailTd);
-			row.appendChild(positionTd);
-			row.appendChild(phoneTd);
-			row.appendChild(addressTd);
-			employees.appendChild(row);
-		}
-	}
-	sendAjaxGet(getReimbursementUrl, setReimbursements);
-}
-
-function setInfo(user, info){
-	let infoContainer = document.getElementById("info-container");
-	let name = document.createElement("p");
-	let email = document.createElement("p");
-	let address = document.createElement("p");
-	let phone = document.createElement("p");
-	let position = document.createElement("p");
-	
-	name.innerHTML = info.firstName +" "+info.lastName;
-	email.innerHTML = user.email;
-	address.innerHTML = info.address;
-	phone.innerHTML = info.phone;
-	position.innerHTML = info.position;
-	
-	infoContainer.appendChild(name);
-	infoContainer.appendChild(email);
-	infoContainer.appendChild(address);
-	infoContainer.appendChild(phone);
-	infoContainer.appendChild(position);
-}
-
-function approveUser(){
-	let id = this.id.replace("app-", "");
-	let body = `true&${id}`;
-	sendAjaxPut(updateUserUrl, body, moveUser);
-}
-
-function denyUser(){
-	let id = this.id.split("-")[1];
-	let body = `id=${id}`;
-	sendAjaxDelete(deleteUserUrl, body, removeUser);
-}
-
-
 
 function decideReimb(){
 	let id = this.id.split("-")[2];
@@ -245,30 +209,6 @@ function decideReimb(){
 	sendAjaxPut(updateReimbUrl, body, moveReimb);
 }
 
-function denyReimb(){
-	console.log(this);
-}
-
-function moveUser(body){
-	
-	let id = body.split("&")[1];
-	let unapprovedAccounts = document.getElementById("unapproved-accounts");
-	let employees = document.getElementById("employee-list");
-	let user = document.getElementById("user"+id);
-	let appButton = document.getElementById("app-"+id);
-	let denyButton = document.getElementById("deny-"+id);
-	appButton.parentNode.removeChild(appButton);
-	denyButton.parentNode.removeChild(denyButton);
-	user.parentNode.removeChild(user);
-	employees.appendChild(user);
-}
-
-function removeUser(body){
-	let id = body.split("=")[1];
-	document.getElementById("");
-	let user = document.getElementById("user"+id);
-	user.parentNode.removeChild(user);
-}
 
 function moveReimb(body){
 	let id = body.split(":")[0];
@@ -289,5 +229,18 @@ function formatDate(date){
 	let dateString = `${month}/${day}/${year}`;
 
 	return dateString;
+	
+}
+
+function setInfo(response){
+	let employeeInfo = JSON.parse(response);
+	let tokArr = token.split(":");
+	let email = tokArr[0];
+			
+	document.getElementById("name").innerHTML += employeeInfo.firstName +" "+employeeInfo.lastName;
+	document.getElementById("position").innerHTML += employeeInfo.position;
+	document.getElementById("email").innerHTML += " "+email;
+	document.getElementById("phone").innerHTML += " "+ employeeInfo.phone;
+	document.getElementById("address").innerHTML += " "+employeeInfo.address;
 	
 }
