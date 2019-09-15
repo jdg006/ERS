@@ -25,9 +25,68 @@
         <a href= "help"><button class="navbar-text btn">Help</button></a>
       </nav>
       <nav class = "col">
-        <a href= "about"><button class="navbar-text btn">About</button></a>
+        <a href= "home"><button class="navbar-text btn" id="logout">Logout</button></a>
       </nav>
     </nav>
+    <div class = "row text-center">
+	    <div class ="col">
+	    	<h3>Info</h3>
+	    	<div id="info-container">
+	    	</div>
+	    </div>
+	    <div class ="col">
+	    	<h3>Pending Reimbursements</h3>
+	    	<table class = "table table-bordered" id = "pending-reimbursements">
+                <tr>
+                	<th>Amount</th>
+                	<th>Date</th>
+                	<th>Reason</th>
+                	<th>Status</th>
+                	<th>Approve</th>
+                	<th>Deny</th>
+                </tr>
+             </table>
+	    </div>
+	    <div class ="col">
+	    	<h3>Resolved Reimbursements</h3>
+	    	<table class = "table table-bordered" id = "resolved-reimbursements">
+                	<tr>
+                		<th>Amount</th>
+                		<th>Date</th>
+                		<th>Reason</th>
+                		<th>Status</th>
+                	</tr>
+                </table>
+	    </div>
+	    
+    </div>  
+    <div class="row">
+    <div class ="col">
+	    	<h3>Unapproved Accounts</h3>
+	    	<table class = "table table-bordered" id = "unapproved-accounts">
+	    	<tr>
+	    		<th>Name</th>
+	    		<th>Email</th>
+	    		<th>Position</th>
+	    		<th>Approve</th>
+	    		<th>Deny</th>
+	    	</tr>
+	    	</table>
+	    </div>
+	    <div class = "col">
+	    	<h3>Employees</h3>
+	    	<table class = "table table-bordered" id = "employee-list">
+	    	<tr>
+	    		<th>Name</th>
+	    		<th>Email</th>
+	    		<th>Position</th>
+	    		<th>Phone</th>
+	    		<th>Address</th>
+	    	</tr>
+	    	</table>
+	    </div>
+    </div>    
+          
     <script src="static/scripts/manager_home.js"></script>
   </body>
 </html>

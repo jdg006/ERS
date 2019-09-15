@@ -98,5 +98,16 @@ public class RequestHelper {
 			response.sendError(405);
 		}
 	}
+	
+	public void processDelete(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
+		String path = request.getServletPath();
+		switch(path) {
+		case "/delete_user":
+			ud.deleteUser(request, response);
+			break;
+		default:
+			response.sendError(405);
+		}
+	} 
 
 }

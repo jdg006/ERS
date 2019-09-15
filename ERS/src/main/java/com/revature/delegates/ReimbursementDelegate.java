@@ -45,9 +45,7 @@ public class ReimbursementDelegate {
 	
 	public void getLastReimbursement(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-		List<Reimbursement> reimbursements = rs.getReimbursements();
-		int length = reimbursements.size();
-		Reimbursement reimbursement = reimbursements.get(length - 1);
+		Reimbursement reimbursement = rs.getLastCreatedReimbursement();
 		
 		try(PrintWriter pw = response.getWriter()){
 			pw.write(new ObjectMapper().writeValueAsString(reimbursement));
@@ -97,10 +95,19 @@ public class ReimbursementDelegate {
 	
 	public void updateReimbursement(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
-		String reimbursementJSON = request.getReader().readLine();
-		ObjectMapper om = new ObjectMapper();
-		Reimbursement reimbursement = om.readValue(reimbursementJSON, Reimbursement.class);
-		boolean updated = rs.updateReimbursement(reimbursement.getId(), reimbursement);
+		String[] bodyArr = request.getReader().readLine().split(":");
+		int id = Integer.parseInt(bodyArr[0]);
+		String approveOrDeny = bodyArr[1];
+		Reimbursement reimbursement = rs.getReimbursement(id);
+		
+		if(approveOrDeny.equalsIgnoreCase("app")) {
+			reimbursement.setApproved(true);
+		}
+		else {
+			reimbursement.setDenied(true);
+		}
+		
+		boolean updated = rs.updateReimbursement(id, reimbursement);
 		
 		if (updated) {
 			response.setStatus(200);

@@ -3,6 +3,8 @@ package com.revature.delegates;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Enumeration;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -40,11 +42,11 @@ public class UserDelegate {
 		String phone = request.getParameter("phone");
 		String address = request.getParameter("address");
 		String position = request.getParameter("position");
-		int userId = us.getLastCreatedUser().getId();
 		
 		User user = new User(email, password, permissionLevel, 0, companyId, false);
-		Info info = new Info(firstName, lastName, phone, address, position, " ", userId);
 		boolean userCreated = us.createUser(user);
+		int userId = us.getLastCreatedUser().getId();
+		Info info = new Info(firstName, lastName, phone, address, position, " ", userId);
 		boolean infoCreated = is.createInfo(info);
 		
 		if (userCreated && infoCreated) {
@@ -58,9 +60,15 @@ public class UserDelegate {
 	
 	public void updateUser(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
 		
-		String userJSON = request.getReader().readLine();
-		ObjectMapper om = new ObjectMapper();
-		User user = om.readValue(userJSON, User.class);
+		String token = request.getHeader("Authorization");
+		String email = token.split(":")[0];
+		User manager = us.getUser(email);
+		String[] bodyArr = request.getReader().readLine().split("&");
+		boolean approved = Boolean.parseBoolean(bodyArr[0]);
+		int id = Integer.parseInt(bodyArr[1]);
+		User user = us.getUser(id);
+		user.setApproved(approved);
+		user.setSuperiorId(manager.getId());
 		boolean updated = us.updateUser(user.getId(), user);
 		
 		if (updated) {
@@ -93,7 +101,22 @@ public class UserDelegate {
 			pw.write(new ObjectMapper().writeValueAsString(allInfo));
 			pw.write("]");
 		}
+	}
+	
+	public void deleteUser(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
 		
+		String[] bodyArr = request.getReader().readLine().split("=");
+		int id = Integer.parseInt(bodyArr[1]);
+		Info info = is.getInfoByUserId(id);
+		boolean infoDeleted = is.deleteInfo(info.getId());
+		boolean userDeleted = us.deleteUsed(id);
+		
+		if (infoDeleted && userDeleted) {
+			response.setStatus(200);
+		}
+		else {
+			response.setStatus(500);
+		}
 	}
 	
 }

@@ -1,4 +1,9 @@
 document.getElementById("request-reimbursement").addEventListener("click", submitReimbReq);
+document.getElementById("logout").addEventListener("click", logout);
+
+function logout(){
+	sessionStorage.token = null;
+}
 
 let setEmpUrl = "http://localhost:8080/ERS/api/set_employee";
 let setReimbUrl = "http://localhost:8080/ERS/api/emp_reimbursements";
@@ -58,7 +63,7 @@ function submitReimbReq(){
 	xhr.onreadystatechange = function(){
 		
 		if(xhr.readyState === 4 && xhr.status == 200){
-			console.log("in here");
+			
 			sendAjaxGet(getLastReimbUrl, getLastReimb);
 		}
 		
@@ -72,35 +77,74 @@ function submitReimbReq(){
 function setReimb(reimbJSON){
 
 	let reimbursements = JSON.parse(reimbJSON);
-	let pendingOl = document.getElementById("pending-reimbursements");
-	let resolvedOl = document.getElementById("resolved-reimbursements");
+	let pending = document.getElementById("pending-reimbursements");
+	let resolved = document.getElementById("resolved-reimbursements");
 	
 	for(let reimbursement of reimbursements){
-		let newLi = document.createElement("li");
-		newLi.innerHTML += reimbursement.amt;
+		
+		let row = document.createElement("tr");
+		let amt = document.createElement("td");
+		let date = document.createElement("td");
+		let reason = document.createElement("td");
+		let status = document.createElement("td");
+		amt.innerHTML = reimbursement.amt;
+		date.innerHTML = formatDate(reimbursement.date);
+		reason.innerHTML = reimbursement.reason;
 		
 		if (reimbursement.approved || reimbursement.denied){
-			
-			resolvedOl.appendChild(newLi);
+			if(reimbursement.approved === false){
+				status.innerHTML = "Denied"
+			}
+			else{
+				status.innerHTML = "Approved"
+			}
+			row.appendChild(amt);
+			row.appendChild(date);
+			row.appendChild(reason);
+			row.appendChild(status);
+			resolved.appendChild(row);
 		}
 		else{
-			
-			pendingOl.appendChild(newLi);
+			status.innerHTML = "Pending";
+			row.appendChild(amt);
+			row.appendChild(date);
+			row.appendChild(reason);
+			row.appendChild(status);
+			pending.appendChild(row);
 			
 		}
 	}
-	
 }
 
 function getLastReimb(reimbJSON){
 	
 	let reimb = JSON.parse(reimbJSON);
-	let pendingOl = document.getElementById("pending-reimbursements");
-	let newLi = document.createElement("li");
-	newLi.innerHTML += reimb;
-	pendingOl.appendChild(newLi);
+	let pending = document.getElementById("pending-reimbursements");
+	let row = document.createElement("tr");
+	let amt = document.createElement("td");
+	let date = document.createElement("td");
+	let reason = document.createElement("td");
+	let status = document.createElement("td");
+	amt.innerHTML = reimb.amt;
+	date.innerHTML = formatDate(reimb.date);
+	reason.innerHTML = reimb.reason;
+	status.innerHTML = "Pending";
+	row.appendChild(amt);
+	row.appendChild(date);
+	row.appendChild(reason);
+	row.appendChild(status);
+	pending.appendChild(row);
 }
 
+function formatDate(date){
+	let month = date.monthValue;
+	let day = date.dayOfMonth;
+	let year = date.year;
+	let dateString = `${month}/${day}/${year}`;
+
+	return dateString;
+	
+}
 sendAjaxGet(setEmpUrl, setEmployee);
 
 

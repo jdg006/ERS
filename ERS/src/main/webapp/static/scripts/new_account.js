@@ -1,4 +1,9 @@
 let getUrl = "http://localhost:8080/ERS/api/companies";
+document.getElementById("logout").addEventListener("click", logout);
+
+function logout(){
+	sessionStorage.token = null;
+}
 
 
 document.getElementById("create").addEventListener("click", sendAjaxPost);

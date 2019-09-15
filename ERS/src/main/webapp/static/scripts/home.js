@@ -1,4 +1,9 @@
 document.getElementById("login").addEventListener("click", requestLogin)
+document.getElementById("logout").addEventListener("click", logout);
+
+function logout(){
+	sessionStorage.token = null;
+}
 
 function requestLogin(){
 	

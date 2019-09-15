@@ -50,5 +50,9 @@ public class ReimbursementService {
 		return rdi.getReimbursementsByCompanyId(companyId);
 		
 	}
+	
+	public Reimbursement getLastCreatedReimbursement() {
+		return rdi.getLastCreatedReimbursement();
+	}
 
 }

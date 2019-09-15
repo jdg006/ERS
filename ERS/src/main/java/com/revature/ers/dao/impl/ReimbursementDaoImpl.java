@@ -234,4 +234,34 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 		return reimbursements;
 	}
 
+	@Override
+	public Reimbursement getLastCreatedReimbursement() {
+		String sql = "select * from \"ERS\".reimbursement order by \"ERS\".reimbursement.id desc limit 1";
+		Reimbursement reimbursement = null;
+		try (Connection c = ConnectionUtil.getConnection();
+				Statement s = c.createStatement();
+				ResultSet rs = s.executeQuery(sql);){
+			
+			while(rs.next()) {
+				
+				int id = rs.getInt("id");
+				int empId = rs.getInt("emp_id");
+				int manId = rs.getInt("man_id");
+				float amt = rs.getFloat("amt");
+				String reason = rs.getString("reason");
+				Date date = rs.getDate("date");
+				boolean denied = rs.getBoolean("denied");
+				boolean approved = rs.getBoolean("approved");
+				
+				reimbursement = new Reimbursement(id, empId ,manId, amt, reason, date.toLocalDate(), denied, approved);
+	
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return reimbursement;
+	}
+
 }
