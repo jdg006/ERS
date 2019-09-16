@@ -329,5 +329,3 @@ function setFilterOptions(response){
 		employeeSelect.appendChild(option);
 	}
 }
-
-
