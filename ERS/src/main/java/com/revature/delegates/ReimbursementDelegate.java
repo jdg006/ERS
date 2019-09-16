@@ -3,6 +3,7 @@ package com.revature.delegates;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -13,6 +14,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.ers.model.Info;
 import com.revature.ers.model.Reimbursement;
 import com.revature.ers.model.User;
+import com.revature.services.InfoService;
 import com.revature.services.ReimbursementService;
 import com.revature.services.UserService;
 
@@ -20,6 +22,7 @@ public class ReimbursementDelegate {
 	
 	ReimbursementService rs = new ReimbursementService();
 	UserService us = new UserService();
+	InfoService is = new InfoService();
 	
 	public void getReimbursements(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
 		
@@ -60,11 +63,34 @@ public class ReimbursementDelegate {
 		String username = arrTok[0];
 		User user = us.getUser(username);
 		
+		System.out.println("Here");
+		
+		List<Info> managersInfo = new ArrayList<Info>();
+		List<User> managers = new ArrayList<User>();
+		List<User> users = us.getUsersByCompanyId(user.getCompanyId());
+		for (User u : users) {
+			System.out.println(u);
+			if (u.getPermissionLevel() > 0) {
+				managers.add(u);
+			}
+		}
+		
+		for (User man : managers) {
+			Info info = is.getInfoByUserId(man.getId());
+			managersInfo.add(info);
+		}
+		
+		System.out.println(managers.size());
+		
 		int companyId = user.getCompanyId();
 		List<Reimbursement> reimbursements = rs.getReimbursementsByCompanyId(companyId);
 		
 		try(PrintWriter pw = response.getWriter()){
+			pw.write("[");
 			pw.write(new ObjectMapper().writeValueAsString(reimbursements));
+			pw.write(",");
+			pw.write(new ObjectMapper().writeValueAsString(managersInfo));
+			pw.write("]");
 		}
 	}
 	
@@ -96,8 +122,12 @@ public class ReimbursementDelegate {
 	public void updateReimbursement(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
 		String[] bodyArr = request.getReader().readLine().split(":");
+		User man = us.getUser(bodyArr[2]);
+		System.out.println(man.getEmail());
 		int id = Integer.parseInt(bodyArr[0]);
 		String approveOrDeny = bodyArr[1];
+		int manId = man.getId();
+		Info manInfo = is.getInfoByUserId(man.getId());
 		Reimbursement reimbursement = rs.getReimbursement(id);
 		
 		if(approveOrDeny.equalsIgnoreCase("app")) {
@@ -107,9 +137,17 @@ public class ReimbursementDelegate {
 			reimbursement.setDenied(true);
 		}
 		
+		reimbursement.setManId(manId);
 		boolean updated = rs.updateReimbursement(id, reimbursement);
 		
 		if (updated) {
+			try(PrintWriter pw = response.getWriter()){
+				pw.write("[");
+				pw.write(new ObjectMapper().writeValueAsString(reimbursement));
+				pw.write(",");
+				pw.write(new ObjectMapper().writeValueAsString(manInfo));	
+				pw.write("]");
+			}
 			response.setStatus(200);
 		}
 		else {

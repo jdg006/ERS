@@ -12,6 +12,7 @@ document.getElementById("nav-man").addEventListener("click", navMan);
 document.getElementById("nav-admin").addEventListener("click", navAdmin);
 document.getElementById("nav-comp").addEventListener("click", navComp);
 document.getElementById("logout").addEventListener("click", logout);
+document.getElementById("apply-filter").addEventListener("click", applyFilter);
 
 function navEmp(){
 	let permissionLevel = token.split(":")[1];
@@ -120,7 +121,7 @@ function sendAjaxPut(url, body, callback){
 	xhr.onreadystatechange = function(){
 		
 		if(xhr.readyState===4 && xhr.status===200){
-			callback(body);
+			callback(xhr.response);
 		}
 	}
 	
@@ -144,17 +145,21 @@ function sendAjaxDelete(url, body, callback){
 }
 
 function setReimbursements(response){
-	let responseArray = JSON.parse(response);
+	
+	let reimbursements = JSON.parse(response)[0];
+	let managers = JSON.parse(response)[1];
 	let pendingReimbursements = document.getElementById("pending-reimbursements");
 	let resolvedReimbursements = document.getElementById("resolved-reimbursements");
 	
-	for (let reimbursement of responseArray){
+	for (let reimbursement of reimbursements){
 		let row = document.createElement("tr");
-		row.id = "reimbursement"+ reimbursement.id;
+		row.id = "reimbursement"+"-"+ reimbursement.id +"-"+ reimbursement.empId;
+		row.className = "reimbursement";
 		let amount = document.createElement("td");
 		let date = document.createElement("td");
 		let reason = document.createElement("td");
 		let status = document.createElement("td");
+		let decidingManager = document.createElement("td");
 		let app = document.createElement("td");
 		let den = document.createElement("td");
 		amount.innerHTML = reimbursement.amt;
@@ -188,6 +193,13 @@ function setReimbursements(response){
 			row.appendChild(amount);
 			row.appendChild(date);
 			row.appendChild(reason);
+			
+			for (let manager of managers){
+				if(manager.userId = reimbursement.manId){
+					decidingManager.innerHTML = `${manager.firstName} ${manager.lastName}`;
+				}
+			}
+			
 			if(reimbursement.approved === true){
 				status.innerHTML = "Approved";
 			}
@@ -195,6 +207,7 @@ function setReimbursements(response){
 				status.innerHTML = "Denied"
 			}
 			row.appendChild(status);
+			row.appendChild(decidingManager);
 			resolvedReimbursements.appendChild(row);
 		}
 	}
@@ -203,23 +216,52 @@ function setReimbursements(response){
 }
 
 function decideReimb(){
+	let manEmail = token.split(":")[0];
 	let id = this.id.split("-")[2];
 	let appOrDen = this.id.split("-")[1];
-	let body = `${id}:${appOrDen}`;
+	let body = `${id}:${appOrDen}:${manEmail}`;
 	sendAjaxPut(updateReimbUrl, body, moveReimb);
 }
 
-
-function moveReimb(body){
-	let id = body.split(":")[0];
-	let reimb = document.getElementById("reimbursement"+id);
-	let resolved = document.getElementById("resolved-reimbursements");
-	let reimbAppBtn = document.getElementById("reimb-app-"+id);
-	let reimbDenBtn = document.getElementById("reimb-den-"+id);
-	reimbAppBtn.parentNode.removeChild(reimbAppBtn);
-	reimbDenBtn.parentNode.removeChild(reimbDenBtn);
+function moveReimb(response){
+	
+	response = JSON.parse(response);
+	let reimbursement = response[0];
+	let manager = response[1];
+	console.log(manager);
+	let resolvedReimbursements = document.getElementById("resolved-reimbursements");
+	let row = document.createElement("tr");
+	row.id = "reimbursement"+ reimbursement.id;
+	let amount = document.createElement("td");
+	let date = document.createElement("td");
+	let reason = document.createElement("td");
+	let status = document.createElement("td");
+	let decidingManager = document.createElement("td");
+	let app = document.createElement("td");
+	let den = document.createElement("td");
+	amount.innerHTML = reimbursement.amt;
+	date.innerHTML = formatDate(reimbursement.date);
+	reason.innerHTML = reimbursement.reason;
+	row.appendChild(amount);
+	row.appendChild(date);
+	row.appendChild(reason);
+	decidingManager.innerHTML = `${manager.firstName} ${manager.lastName}`;
+	if(reimbursement.approved === true){
+		status.innerHTML = "Approved";
+	}
+	else{
+		status.innerHTML = "Denied"
+	}
+	row.appendChild(status);
+	row.appendChild(decidingManager);
+	
+	
+	let id = reimbursement.id;
+	let userId = reimbursement.empId
+	let reimb = document.getElementById("reimbursement-"+id+"-"+userId);
 	reimb.parentNode.removeChild(reimb);
-	resolved.appendChild(reimb);
+	resolvedReimbursements.appendChild(row);
+
 }
 
 function formatDate(date){
@@ -243,4 +285,49 @@ function setInfo(response){
 	document.getElementById("phone").innerHTML += " "+ employeeInfo.phone;
 	document.getElementById("address").innerHTML += " "+employeeInfo.address;
 	
+	sendAjaxGet(getEmployeesUrl, setFilterOptions);
+	
 }
+function applyFilter(){
+	let reimbursements = document.getElementsByClassName("reimbursement");
+	let id = document.getElementById("employee-select").value;
+	if(id !== "all"){
+		for (let reimb of reimbursements) {
+			let reimbEmpId = reimb.id.split("-")[2];
+			if (reimbEmpId != id ){
+				reimb.style.display = "none";
+			}
+			else{
+				reimb.style.display = null;
+			}
+		}
+	}
+	else{
+		for (let reimb of reimbursements) {
+			reimb.style.display = null;
+		}
+	}
+}
+
+function setFilterOptions(response){
+	response = JSON.parse(response);
+	
+	let allInfo = response[1];
+	
+	let name;
+	let id;
+	
+	let employeeSelect = document.getElementById("employee-select");
+	
+	for (let info of allInfo ){
+		let option = document.createElement("option");
+		name = info.firstName + " " + info.lastName;
+		id = info.userId;
+		option.innerHTML = name;
+		option.id = "user-"+id+"-option";
+		option.value = id;
+		employeeSelect.appendChild(option);
+	}
+}
+
+
