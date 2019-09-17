@@ -1,0 +1,195 @@
+
+Wcom.revature.ers.dao.impl.UserDaoImpl#getLastCreatedUser()Lcom/revature/ers/model/User;{
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.javau u("19*‹
+14{
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.java~	 ~(œÃ
+{
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.java~	 ~(
+%3boolean"java.sql.ResultSet#next()Z*
+
+rsjava.sql.ResultSet2next()*
+3
+12*∆
+15{
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.java| |(&º
+π
+{
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.java| |(&
+rsjava.sql.ResultSet"__id*
+
+%2java.sql.ResultSet*
+14*É
+16{
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.java{ {(%ª
+∏
+{
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.java{ {(%
+sjava.sql.Statement"__id*
+
+%1java.sql.Statementª∏
+{
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.java| |(&
+%2java.sql.ResultSet"Gjava.sql.Statement#executeQuery(Ljava/lang/String;)Ljava/sql/ResultSet;*
+
+sjava.sql.Statement*
+
+sqljava.lang.String2 executeQuery(Ljava/lang/String;)*
+15*Œ
+17{
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.javaz z(4Ω
+∫
+{
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.javaz z(4
+cjava.sql.Connection"__id*
+
+%0java.sql.ConnectionÑÅ
+{
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.java{ {(%
+%1java.sql.Statement"9java.sql.Connection#createStatement()Ljava/sql/Statement;*
+
+cjava.sql.Connection2createStatement()*
+16*ö
+18{
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.javaz z($ê
+ç
+{
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.javaz z(4
+%0java.sql.Connection"Icom.revature.ers.util.ConnectionUtil#getConnection()Ljava/sql/Connection;*("&
+$com.revature.ers.util.ConnectionUtil*
+17*ò
+19{
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.javav v(Dÿ
+’
+{
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.javav v(E
+sqljava.lang.String"__id*75
+3select * from \"ERS\".user order by id desc limit 1≥
+∞
+{
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.javax x(#
+usercom.revature.ers.model.User"__id*
+""*
+18*´
+1}
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.javaí	 í("¶
+}
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.javaí í(%
+#
+usercom.revature.ers.model.User*€
+3}
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.javaå å(—Œ
+}
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.javaå å(
+%13void"java.sql.ResultSet#close()V*
+
+rsjava.sql.ResultSet2close()*
+1*ﬁ
+4}
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.javaà à(Z”
+–
+}
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.javaà à(Z#
+usercom.revature.ers.model.User"__id*$
+"
+%11com.revature.ers.model.User*
+14*¥
+5}
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.javaÜ Ü(1√¿
+}
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.javaà à("
+%11com.revature.ers.model.User"com.revature.ers.model.User‰
+·
+}
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.javaà à(Z
+%12"Ncom.revature.ers.model.User#<init>(ILjava/lang/String;Ljava/lang/String;IIIZ)V*$
+"
+%11com.revature.ers.model.User*
+""*
+
+emailjava.lang.String*
+
+passwordjava.lang.String*
+""*
+""*
+""*
+""*
+4*ö
+6}
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.javaÖ Ö(,êç
+}
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.javaÜ Ü(0
+%10boolean"2java.sql.ResultSet#getBoolean(Ljava/lang/String;)Z*
+
+rsjava.sql.ResultSet*
+
+approved2getBoolean(Ljava/lang/String;)*
+5*è
+7}
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.javaÑ Ñ(.ÖÇ
+}
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.javaÖ Ö(+	
+%9int".java.sql.ResultSet#getInt(Ljava/lang/String;)I*
+
+rsjava.sql.ResultSet*
+
+company_id2getInt(Ljava/lang/String;)*
+6*ê
+8}
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.javaÉ É(8ÜÉ
+}
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.javaÑ Ñ(-	
+%8int".java.sql.ResultSet#getInt(Ljava/lang/String;)I*
+
+rsjava.sql.ResultSet*
+superior_id2getInt(Ljava/lang/String;)*
+7*ÿ
+9}
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.javaÇ Ç(/¿
+Ω
+}
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.javaÇ Ç(/
+passwordjava.lang.String"__id*
+
+%6java.lang.Stringãà
+}
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.javaÉ É(7	
+%7int".java.sql.ResultSet#getInt(Ljava/lang/String;)I*
+
+rsjava.sql.ResultSet*
+permission_level2getInt(Ljava/lang/String;)*
+8*Ú
+10}
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.javaÅ Å()Ω
+∫
+}
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.javaÅ Å()
+emailjava.lang.String"__id*
+
+%5java.lang.Stringß§
+}
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.javaÇ Ç(.
+%6java.lang.String"Bjava.sql.ResultSet#getString(Ljava/lang/String;)Ljava/lang/String;*
+
+rsjava.sql.ResultSet*
+
+password2getString(Ljava/lang/String;)*
+9*∞
+11}
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.javaÄ Ä(§°
+}
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.javaÅ Å((
+%5java.lang.String"Bjava.sql.ResultSet#getString(Ljava/lang/String;)Ljava/lang/String;*
+
+rsjava.sql.ResultSet*	
+email2getString(Ljava/lang/String;)*
+10*â
+12}
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.javaÄ Ä(˝˙
+}
+qC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\dao\impl\UserDaoImpl.javaÄ Ä(	
+%4int".java.sql.ResultSet#getInt(Ljava/lang/String;)I*
+
+rsjava.sql.ResultSet*
+id2getInt(Ljava/lang/String;)*
+11B)'
+%com.revature.ers.dao.impl.UserDaoImpl

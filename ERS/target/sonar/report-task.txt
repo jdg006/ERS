@@ -1,0 +1,7 @@
+organization=jdg006
+projectKey=jdg006_ERS
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.617
+dashboardUrl=https://sonarcloud.io/dashboard?id=jdg006_ERS
+ceTaskId=AW08HgHoE0HyGMgdpKlT
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AW08HgHoE0HyGMgdpKlT

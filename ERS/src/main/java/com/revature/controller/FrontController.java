@@ -5,20 +5,29 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.catalina.servlets.DefaultServlet;
+import org.apache.log4j.Logger;
 
 /**
  * Servlet implementation class FrontController
  */
+
+
 public class FrontController extends DefaultServlet {
+	
+	private static Logger log = Logger.getRootLogger();
+	
 	private static final long serialVersionUID = 1L;
 	
 	private RequestHelper rh = new RequestHelper();
        
     public FrontController() {
+    	
         super();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		log.info(request);
 		
 		String path = request.getRequestURI().substring(request.getContextPath().length());
 		
@@ -38,7 +47,7 @@ public class FrontController extends DefaultServlet {
 	}
 	
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		
 		rh.processPut(request, response);
 	}
 	

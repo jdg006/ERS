@@ -89,7 +89,7 @@ function logout(){
 sendAjaxGet(getReimbursementUrl, setReimbursements);
 
 function buttonSet(){
-	 reimbButtons = document.getElementsByClassName("reimb-btn");
+	let reimbButtons = document.getElementsByClassName("reimb-btn");
 	 
 	 for(let rab of reimbButtons){
 		 rab.addEventListener("click", decideReimb);

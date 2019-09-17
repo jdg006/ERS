@@ -8,11 +8,15 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import com.revature.ers.dao.CompanyDao;
 import com.revature.ers.model.Company;
 import com.revature.ers.util.ConnectionUtil;
 
 public class CompanyDaoImpl implements CompanyDao {
+	
+	private static Logger log = Logger.getRootLogger();
 
 	@Override
 	public List<Company> getCompanies() {

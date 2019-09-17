@@ -1,0 +1,23 @@
+
+Hcom.revature.services.UserService#getUsersByCompanyId(I)Ljava/util/List;w
+mC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\services\UserService.java( ((&"1*¤
+1w
+mC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\services\UserService.java)	 )(ß
+Ü
+w
+mC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\services\UserService.java)	 )(+
+%0%com.revature.ers.dao.impl.UserDaoImpl"__id*.*,#
+!com.revature.services.UserService"
+udi¯¬
+w
+mC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\services\UserService.java)	 )(+
+%1java.util.List"Lcom.revature.ers.dao.impl.UserDaoImpl#getUsersByCompanyId(I)Ljava/util/List;*-
++
+%0%com.revature.ers.dao.impl.UserDaoImpl*
+""2getUsersByCompanyId(I)"‘
+w
+mC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\services\UserService.java) )(,
+
+%1java.util.List:
+""B%#
+!com.revature.services.UserService

@@ -1,0 +1,112 @@
+
+'com.revature.ers.model.User#hashCode()Iq
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.java\ \("8"9*§
+2q
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.javac6 c(>ƒ
+¡
+q
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.javac6 c(>
+%12java.lang.String"__id*-*+
+com.revature.ers.model.User"
+
+password«ƒ
+q
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.javac6 c(I
+
+%11int"java.lang.String#hashCode()I*
+
+%12java.lang.String2
+hashCode()ï
+í
+q
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.javac6 c(I	
+%9int"__id*
+
+
+%11int*
+1*ì
+3q
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.javac2 c(3ï
+í
+q
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.javac2 c(3	
+%9int"__id*
+
+
+%10int*
+1*ƒ
+4q
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.javaa a(D√
+¿
+q
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.javac c(&
+%8java.lang.String"__id*-*+
+com.revature.ers.model.User"
+
+password*
+2
+3*ù
+5q
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.javaa3 a(8¿
+Ω
+q
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.javaa3 a(8
+%7java.lang.String"__id***(
+com.revature.ers.model.User"
+email≈¬
+q
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.javaa3 a(C	
+%6int"java.lang.String#hashCode()I*
+
+%7java.lang.String2
+hashCode()î
+ë
+q
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.javaa3 a(C	
+%4int"__id*
+	
+%6int*
+4*í
+6q
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.javaa/ a(0î
+ë
+q
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.javaa/ a(0	
+%4int"__id*
+	
+%5int*
+4*¡
+7q
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.java_ _(4¿
+Ω
+q
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.javaa a(#
+%3java.lang.String"__id***(
+com.revature.ers.model.User"
+email*
+5
+6*í
+8q
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.java_/ _(3î
+ë
+q
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.java_/ _(3	
+%0int"__id*
+	
+%2int*
+7*í
+9q
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.java_( _(,î
+ë
+q
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.java_( _(,	
+%0int"__id*
+	
+%1int*
+7*Û
+1q
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.javac c(J"{
+q
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.javaf f(
+""B
+com.revature.ers.model.User

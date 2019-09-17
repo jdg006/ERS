@@ -63,8 +63,6 @@ public class ReimbursementDelegate {
 		String username = arrTok[0];
 		User user = us.getUser(username);
 		
-		System.out.println("Here");
-		
 		List<Info> managersInfo = new ArrayList<Info>();
 		List<User> managers = new ArrayList<User>();
 		List<User> users = us.getUsersByCompanyId(user.getCompanyId());
@@ -79,8 +77,6 @@ public class ReimbursementDelegate {
 			Info info = is.getInfoByUserId(man.getId());
 			managersInfo.add(info);
 		}
-		
-		System.out.println(managers.size());
 		
 		int companyId = user.getCompanyId();
 		List<Reimbursement> reimbursements = rs.getReimbursementsByCompanyId(companyId);
@@ -123,7 +119,6 @@ public class ReimbursementDelegate {
 		
 		String[] bodyArr = request.getReader().readLine().split(":");
 		User man = us.getUser(bodyArr[2]);
-		System.out.println(man.getEmail());
 		int id = Integer.parseInt(bodyArr[0]);
 		String approveOrDeny = bodyArr[1];
 		int manId = man.getId();

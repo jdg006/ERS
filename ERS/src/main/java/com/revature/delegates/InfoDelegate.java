@@ -48,8 +48,6 @@ public class InfoDelegate {
 		String[] tokenArr = token.split(":");
 		int userId = us.getUser(tokenArr[0]).getId();
 		int infoId = is.getInfoByUserId(userId).getId();
-		System.out.println(userId);
-		System.out.println(infoId);
 		
 		String infoJSON = request.getReader().readLine();
 		ObjectMapper om = new ObjectMapper();
@@ -57,9 +55,8 @@ public class InfoDelegate {
 		info.setUserId(userId);
 		info.setId(infoId);
 		
-		System.out.println(info);
 		boolean updated = is.updateInfo(info.getId(), info);
-		System.out.println(updated);
+		
 		if (updated) {
 			response.setStatus(200);
 		}

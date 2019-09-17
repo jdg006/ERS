@@ -1,0 +1,89 @@
+
+*com.revature.ers.model.Company#hashCode()It
+jC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\Company.java/ /("7*«
+2t
+jC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\Company.java42 4(6Å
+Â
+t
+jC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\Company.java42 4(6
+%9java.lang.String"__id*,** 
+com.revature.ers.model.Company"
+nameÈÅ
+t
+jC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\Company.java42 4(A	
+%8int"java.lang.String#hashCode()I*
+
+%9java.lang.String2
+hashCode()—
+”
+t
+jC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\Company.java42 4(A	
+%6int"__id*
+	
+%8int*
+1*˜
+3t
+jC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\Company.java4. 4(/—
+”
+t
+jC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\Company.java4. 4(/	
+%6int"__id*
+	
+%7int*
+1*É
+4t
+jC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\Company.java2 2(LÅ
+Â
+t
+jC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\Company.java4 4("
+%5java.lang.String"__id*,** 
+com.revature.ers.model.Company"
+name*
+2
+3*°
+5t
+jC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\Company.java27 2(@Ê
+Ç
+t
+jC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\Company.java27 2(@
+%4java.lang.String"__id*1*/ 
+com.revature.ers.model.Company"
+	hqAddressÈÅ
+t
+jC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\Company.java27 2(K	
+%3int"java.lang.String#hashCode()I*
+
+%4java.lang.String2
+hashCode()—
+”
+t
+jC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\Company.java27 2(K	
+%1int"__id*
+	
+%3int*
+4*˜
+6t
+jC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\Company.java23 2(4—
+”
+t
+jC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\Company.java23 2(4	
+%1int"__id*
+	
+%2int*
+4*Î
+7t
+jC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\Company.java0 0(Ê
+Ç
+t
+jC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\Company.java2 2('
+%0java.lang.String"__id*1*/ 
+com.revature.ers.model.Company"
+	hqAddress*
+5
+6*ù
+1t
+jC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\Company.java4 4(B"~
+t
+jC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\Company.java5 5(
+""B" 
+com.revature.ers.model.Company

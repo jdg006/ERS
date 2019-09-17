@@ -5,6 +5,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import com.revature.ers.dao.impl.CompanyDaoImpl;
 import com.revature.ers.dao.impl.InfoDaoImpl;
 import com.revature.ers.dao.impl.ReimbursementDaoImpl;
@@ -15,7 +17,7 @@ import com.revature.ers.model.Reimbursement;
 import com.revature.ers.model.User;
 
 public class Driver {
-
+	private static Logger log = Logger.getRootLogger();
 	public static void main(String[] args) {
 		
 		InfoDaoImpl idi = new InfoDaoImpl();
@@ -46,7 +48,7 @@ public class Driver {
 		//User user1 = new User("g@g.com", "pass", 0, 1, 1, false);
 		//udi.createUser(user1);
 		//udi.deleteUser(2);
-//		List<User> users = new ArrayList<User>();
+		List<User> users = udi.getUsers();
 //		
 //		User user = udi.getUser(1);
 //		User user2 = udi.getLastCreatedUser();
@@ -89,7 +91,7 @@ public class Driver {
 //		reimbursements = rdi.getReimbursements();
 //		Reimbursement reimbursement = rdi.getReimbursement(1);
 		
-		
+		log.info(users);
 		//System.out.println(idi.getInfoByUserId(17));
 		//Info info1 = new Info("bill", "Billson", "71717171717", "this is an address", "proletariate","http://words.com", 3);
 		

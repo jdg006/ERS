@@ -1,0 +1,21 @@
+
+Ccom.revature.services.CompanyService#getCompanies()Ljava/util/List;z
+pC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\services\CompanyService.java$ $(""1*§
+1z
+pC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\services\CompanyService.java&	 &(Ë
+Â
+z
+pC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\services\CompanyService.java&	 &(.
+%0(com.revature.ers.dao.impl.CompanyDaoImpl"__id*1*/&
+$com.revature.services.CompanyService"
+cdi†ù
+z
+pC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\services\CompanyService.java&	 &(
+%1java.util.List"Gcom.revature.ers.dao.impl.CompanyDaoImpl#getCompanies()Ljava/util/List;*0
+.
+%0(com.revature.ers.dao.impl.CompanyDaoImpl2getCompanies()"î
+z
+pC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\services\CompanyService.java& &(
+
+%1java.util.ListB(&
+$com.revature.services.CompanyService

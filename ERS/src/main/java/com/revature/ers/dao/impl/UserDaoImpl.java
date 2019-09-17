@@ -8,13 +8,19 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import com.revature.ers.dao.UserDao;
 import com.revature.ers.model.User;
 import com.revature.ers.util.ConnectionUtil;
 
 public class UserDaoImpl implements UserDao {
+	
+	private static Logger log = Logger.getRootLogger();
 
 	public List<User> getUsers() {
+		
+		log.info("get users");
 		
 		String sql = "select * from \"ERS\".user";
 		

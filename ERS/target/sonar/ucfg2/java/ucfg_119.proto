@@ -1,0 +1,24 @@
+
+Icom.revature.services.UserService#getUser(I)Lcom/revature/ers/model/User;w
+mC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\services\UserService.java ("1*³
+1w
+mC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\services\UserService.java	 (ß
+Ü
+w
+mC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\services\UserService.java	 (+
+%0%com.revature.ers.dao.impl.UserDaoImpl"__id*.*,#
+!com.revature.services.UserService"
+udi±®
+w
+mC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\services\UserService.java	 (!
+%1com.revature.ers.model.User"Mcom.revature.ers.dao.impl.UserDaoImpl#getUser(I)Lcom/revature/ers/model/User;*-
++
+%0%com.revature.ers.dao.impl.UserDaoImpl*
+""2
+getUser(I)"ž
+w
+mC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\services\UserService.java (#
+!
+%1com.revature.ers.model.User:
+""B%#
+!com.revature.services.UserService

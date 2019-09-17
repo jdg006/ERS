@@ -1,0 +1,123 @@
+
+8com.revature.ers.model.User#toString()Ljava/lang/String;s
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.javaä ä("1*Í
+1s
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.javaã	 ã(±
+Æ
+s
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.javaã	 ã(
+%0java.lang.String"__concat*
+	User [id=*
+""¬
+ø
+s
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.javaã	 ã(&
+%1java.lang.String"__concat*
+
+%0java.lang.String*
+
+, email=¬
+ø
+s
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.javaã) ã(.
+%2java.lang.String"__id***(
+com.revature.ers.model.User"
+emailŒ
+À
+s
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.javaã	 ã(.
+%3java.lang.String"__concat*
+
+%1java.lang.String*
+
+%2java.lang.String≈
+¬
+s
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.javaã	 ã(>
+%4java.lang.String"__concat*
+
+%3java.lang.String*
+, password=≈
+¬
+s
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.javaãA ã(I
+%5java.lang.String"__id*-*+
+com.revature.ers.model.User"
+
+passwordŒ
+À
+s
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.javaã	 ã(I
+%6java.lang.String"__concat*
+
+%4java.lang.String*
+
+%5java.lang.StringÃ
+…
+s
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.javaã	 ã(`
+%7java.lang.String"__concat*
+
+%6java.lang.String*
+, permissionLevel=º
+π
+s
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.javaã	 ã(r
+%8java.lang.String"__concat*
+
+%7java.lang.String*
+""«
+ƒ
+s
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.javaã	 å(
+%9java.lang.String"__concat*
+
+%8java.lang.String*
+, superiorId=Ω
+∫
+s
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.javaã	 å("
+%10java.lang.String"__concat*
+
+%9java.lang.String*
+""»
+≈
+s
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.javaã	 å(3
+%11java.lang.String"__concat*
+
+%10java.lang.String*
+, companyId=æ
+ª
+s
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.javaã	 å(?
+%12java.lang.String"__concat*
+
+%11java.lang.String*
+""«
+ƒ
+s
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.javaã	 å(O
+%13java.lang.String"__concat*
+
+%12java.lang.String*
+, approved=æ
+ª
+s
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.javaã	 å(Z
+%14java.lang.String"__concat*
+
+%13java.lang.String*
+""Ω
+∫
+s
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.javaã	 å(`
+%15java.lang.String"__concat*
+
+%14java.lang.String*
+]"ê
+s
+gC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\User.javaã å(a
+
+%15java.lang.StringB
+com.revature.ers.model.User

@@ -1,0 +1,65 @@
+
+;com.revature.ers.model.Company#toString()Ljava/lang/String;t
+jC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\Company.javaQ Q("1*À
+1t
+jC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\Company.javaR	 R(µ
+≤
+t
+jC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\Company.javaR	 R(
+%0java.lang.String"__concat*
+Company [id=*
+""¬
+ø
+t
+jC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\Company.javaR	 R((
+%1java.lang.String"__concat*
+
+%0java.lang.String*	
+, name=≈
+¬
+t
+jC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\Company.javaR+ R(/
+%2java.lang.String"__id*,** 
+com.revature.ers.model.Company"
+nameœ
+Ã
+t
+jC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\Company.javaR	 R(/
+%3java.lang.String"__concat*
+
+%1java.lang.String*
+
+%2java.lang.String«
+ƒ
+t
+jC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\Company.javaR	 R(@
+%4java.lang.String"__concat*
+
+%3java.lang.String*
+, hqAddress= 
+«
+t
+jC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\Company.javaRC R(L
+%5java.lang.String"__id*1*/ 
+com.revature.ers.model.Company"
+	hqAddressœ
+Ã
+t
+jC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\Company.javaR	 R(L
+%6java.lang.String"__concat*
+
+%4java.lang.String*
+
+%5java.lang.Stringº
+π
+t
+jC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\Company.javaR	 R(R
+%7java.lang.String"__concat*
+
+%6java.lang.String*
+]"ê
+t
+jC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\Company.javaR R(S
+
+%7java.lang.StringB" 
+com.revature.ers.model.Company

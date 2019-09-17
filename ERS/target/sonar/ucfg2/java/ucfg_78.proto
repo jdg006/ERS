@@ -1,0 +1,16 @@
+
+Ccom.revature.ers.model.Reimbursement#getDate()Ljava/time/LocalDate;z
+pC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\Reimbursement.javaL L("1*ò
+1z
+pC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\Reimbursement.javaM	 M(Ô
+Ñ
+z
+pC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\Reimbursement.javaM	 M(
+%0java.time.LocalDate"__id*2*0&
+$com.revature.ers.model.Reimbursement"
+date"™
+z
+pC:\Users\Joe\Documents\workspace-sts-3.9.7.RELEASE-5\ERS\src\main\java\com\revature\ers\model\Reimbursement.javaM M(
+
+%0java.time.LocalDateB(&
+$com.revature.ers.model.Reimbursement

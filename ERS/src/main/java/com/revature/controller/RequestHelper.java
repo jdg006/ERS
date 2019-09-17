@@ -6,6 +6,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
+
 import com.revature.delegates.AuthDelegate;
 import com.revature.delegates.CompanyDelegate;
 import com.revature.delegates.InfoDelegate;
@@ -25,6 +27,7 @@ public class RequestHelper {
 	private AuthDelegate ad = new AuthDelegate();
 	
 	public void processGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		
 		String uri = request.getServletPath();
 		if(uri.startsWith("/api/")) {
 			String record = uri.substring(5);
@@ -61,7 +64,7 @@ public class RequestHelper {
 				response.sendError(404, "record not supported");
 			}
 		} else {
-			System.out.println("routed to view delegate");
+			
 			vd.returnView(request, response);
 		}
 	}
