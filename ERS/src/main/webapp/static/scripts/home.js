@@ -6,7 +6,19 @@ document.getElementById("nav-admin").addEventListener("click", navAdmin)
 document.getElementById("nav-comp").addEventListener("click", navComp)
 
 function navEmp(){
-	let permissionLevel = token.split(":")[1];
+	
+	let permissionLevel;
+	
+	if(token != null){
+		
+		permissionLevel = token.split(":")[1];
+	}
+	else {
+		
+	  permissionLevel = -1;
+	}
+	
+
 	if(permissionLevel == 0){
 		window.location.href = "http://localhost:8080/ERS/employee_home";
 	}
@@ -22,7 +34,17 @@ function navEmp(){
 	}
 }
 function navMan(){
-	let permissionLevel = token.split(":")[1];
+	let permissionLevel;
+	
+	if(token != null){
+		
+		permissionLevel = token.split(":")[1];
+	}
+	else {
+		
+	  permissionLevel = -1;
+	}
+	
 	if(permissionLevel == 0){
 		alert("You do not have access to manager pages.");
 		window.location.href = "http://localhost:8080/ERS/employee_home";
@@ -39,7 +61,16 @@ function navMan(){
 	}
 }
 function navAdmin(){
-	let permissionLevel = token.split(":")[1];
+let permissionLevel;
+	
+	if(token != null){
+		
+		permissionLevel = token.split(":")[1];
+	}
+	else {
+		
+	  permissionLevel = -1;
+	}
 	if(permissionLevel == 0){
 		alert("You do not have access to admin pages.");
 		window.location.href = "http://localhost:8080/ERS/employee_home";
@@ -58,7 +89,16 @@ function navAdmin(){
 }
 
 function navComp(){
-	let permissionLevel = token.split(":")[1];
+let permissionLevel;
+	
+	if(token != null){
+		
+		permissionLevel = token.split(":")[1];
+	}
+	else {
+		
+		permissionLevel = -1;
+	}
 	if(permissionLevel == 0){
 		alert("You do not have access to company pages.");
 		window.location.href = "http://localhost:8080/ERS/employee_home";
@@ -109,6 +149,9 @@ function requestLogin(){
 				window.location.href = "http://localhost:8080/ERS/home";
 			}
 			
+		}
+		else if(xhr.readyState === 4 && xhr.status === 401){
+			alert("Either your credentials are incorrect or your account has not been approved or has been denied. Please try again or contact your manager.");
 		}
 	}
 	console.log("here4");

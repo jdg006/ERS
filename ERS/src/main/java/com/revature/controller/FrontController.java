@@ -26,9 +26,8 @@ public class FrontController extends DefaultServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		log.info(request);
-		
+		log.info(request.getHeader("Authorization"));
+		log.info("get request");
 		String path = request.getRequestURI().substring(request.getContextPath().length());
 		
 		if(path.startsWith("/static/")) {

@@ -108,6 +108,10 @@ function sendAjaxPost(){
 		if(xhr.readyState===4 && xhr.status===200){
 			window.location.href = "http://localhost:8080/ERS/home";
 		}
+		else if (xhr.readyState===4 && xhr.status===500){
+			alert("That email is already take please try another.");
+			document.getElementById("email").value = null;
+		}
 	}
 	
 	let email = document.getElementById("email").value;

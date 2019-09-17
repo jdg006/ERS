@@ -38,7 +38,7 @@ public class AuthDelegate {
 		String password = request.getParameter("password");
 		User u = udi.getUser(email);
 
-		if(u!=null && u.getPassword().contentEquals(password)) {
+		if(u!=null && u.getPassword().contentEquals(password) && u.isApproved() == true) {
 			
 			String token = u.getEmail()+":"+u.getPermissionLevel()+":"+u.hashCode();
 			response.setStatus(200);

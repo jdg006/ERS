@@ -1,19 +1,1 @@
 
-2019-09-16 20:22:29 INFO  UserDaoImpl:23 method: getUsers - get users
-2019-09-16 20:22:30 INFO  Driver:94 method: main - [User [id=1, email=j@j.com, password=wordofpass, permissionLevel=2, superiorId=0, companyId=1, approved=true], User [id=19, email=a@a.com, password=a, permissionLevel=0, superiorId=1, companyId=1, approved=true], User [id=21, email=sadlyhappy@clown.com, password=pass, permissionLevel=0, superiorId=19, companyId=1, approved=true], User [id=23, email=man@man.com, password=man, permissionLevel=1, superiorId=0, companyId=1, approved=true], User [id=22, email=a@b.com, password=pass, permissionLevel=0, superiorId=23, companyId=1, approved=true], User [id=24, email=i@i.com, password=iiiii, permissionLevel=0, superiorId=23, companyId=1, approved=true], User [id=26, email=lk@ds.com, password=dfg, permissionLevel=0, superiorId=23, companyId=1, approved=true], User [id=25, email=j@kkjhg.com, password=g, permissionLevel=0, superiorId=23, companyId=1, approved=true], User [id=27, email=a@sdsf.com, password=dfgsdfg, permissionLevel=0, superiorId=23, companyId=1, approved=true], User [id=29, email=d@d.com, password=g, permissionLevel=0, superiorId=23, companyId=1, approved=true]]
-2019-09-16 21:31:44 INFO  InfoDaoImpl:22 method: getAllInfo - all info
-2019-09-16 21:33:00 INFO  InfoDaoImpl:22 method: getAllInfo - all info
-2019-09-16 21:34:39 INFO  InfoDaoImpl:22 method: getAllInfo - all info
-2019-09-16 21:36:24 INFO  InfoDaoImpl:22 method: getAllInfo - all info
-2019-09-16 21:36:50 INFO  InfoDaoImpl:22 method: getAllInfo - all info
-2019-09-16 21:37:12 INFO  InfoDaoImpl:22 method: getAllInfo - all info
-2019-09-16 21:45:02 INFO  InfoDaoImpl:22 method: getAllInfo - all info
-2019-09-16 21:45:06 INFO  InfoDaoImpl:22 method: getAllInfo - all info
-2019-09-16 21:46:51 INFO  InfoDaoImpl:22 method: getAllInfo - all info
-2019-09-16 21:46:55 INFO  InfoDaoImpl:22 method: getAllInfo - all info
-2019-09-16 21:47:50 INFO  InfoDaoImpl:22 method: getAllInfo - all info
-2019-09-16 21:47:52 INFO  InfoDaoImpl:22 method: getAllInfo - all info
-2019-09-16 21:47:55 INFO  InfoDaoImpl:22 method: getAllInfo - all info
-2019-09-16 21:50:11 INFO  InfoDaoImpl:22 method: getAllInfo - all info
-2019-09-16 21:50:13 INFO  InfoDaoImpl:22 method: getAllInfo - all info
-2019-09-16 21:50:18 INFO  InfoDaoImpl:22 method: getAllInfo - all info
