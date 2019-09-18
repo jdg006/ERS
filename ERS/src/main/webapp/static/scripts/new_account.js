@@ -3,8 +3,8 @@ let getUrl = "http://localhost:8080/ERS/api/companies";
 
 document.getElementById("nav-emp").addEventListener("click", navEmp);
 document.getElementById("nav-man").addEventListener("click", navMan);
-document.getElementById("nav-admin").addEventListener("click", navAdmin);
-document.getElementById("nav-comp").addEventListener("click", navComp);
+//document.getElementById("nav-admin").addEventListener("click", navAdmin);
+//document.getElementById("nav-comp").addEventListener("click", navComp);
 document.getElementById("create").addEventListener("click", sendAjaxPost);
 document.getElementById("logout").addEventListener("click", logout);
 

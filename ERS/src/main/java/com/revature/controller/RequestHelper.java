@@ -25,11 +25,12 @@ public class RequestHelper {
 	private ReimbursementDelegate rd = new ReimbursementDelegate();
 	private InfoDelegate id = new InfoDelegate();
 	private AuthDelegate ad = new AuthDelegate();
+	private static Logger log = Logger.getRootLogger();
 	
 	public void processGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-		
+		log.info(request.getRequestURI());
 		String uri = request.getServletPath();
-		if(uri.startsWith("/api/")) {
+		if(request.getRequestURI().matches("/ERS/api/companies") || uri.startsWith("/api/") && ad.isAuthorized(request)) {
 			String record = uri.substring(5);
 			switch(record) {
 			case "companies":
@@ -90,7 +91,13 @@ public class RequestHelper {
 		String path = request.getServletPath();
 		switch(path) {
 		case "/update_info":
+			
+			if(ad.isAuthorized(request)) {
 			id.updateInfo(request, response);
+			}
+			else {
+				response.setStatus(401);
+			}
 			break;
 		case "/update_reimbursement":
 			rd.updateReimbursement(request, response);

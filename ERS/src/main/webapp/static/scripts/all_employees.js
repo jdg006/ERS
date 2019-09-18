@@ -8,8 +8,8 @@ let deleteUserUrl = "http://localhost:8080/ERS/delete_user";
 
 document.getElementById("nav-emp").addEventListener("click", navEmp)
 document.getElementById("nav-man").addEventListener("click", navMan)
-document.getElementById("nav-admin").addEventListener("click", navAdmin)
-document.getElementById("nav-comp").addEventListener("click", navComp)
+//document.getElementById("nav-admin").addEventListener("click", navAdmin)
+//document.getElementById("nav-comp").addEventListener("click", navComp)
 
 function navEmp(){
 	let permissionLevel = token.split(":")[1];

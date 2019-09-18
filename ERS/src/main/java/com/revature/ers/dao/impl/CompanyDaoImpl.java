@@ -65,8 +65,6 @@ public class CompanyDaoImpl implements CompanyDao {
 				 id = rs.getInt("id");
 				String name = rs.getString("name");
 				String hqAddress = rs.getString("hq_address");
-				
-				
 				 company = new Company(id, name, hqAddress);
 	
 			}

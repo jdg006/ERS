@@ -2,8 +2,8 @@ let token = sessionStorage.getItem("token");
 
 document.getElementById("nav-emp").addEventListener("click", navEmp)
 document.getElementById("nav-man").addEventListener("click", navMan)
-document.getElementById("nav-admin").addEventListener("click", navAdmin)
-document.getElementById("nav-comp").addEventListener("click", navComp)
+//document.getElementById("nav-admin").addEventListener("click", navAdmin)
+//document.getElementById("nav-comp").addEventListener("click", navComp)
 
 function navEmp(){
 	
@@ -154,7 +154,7 @@ function requestLogin(){
 			alert("Either your credentials are incorrect or your account has not been approved or has been denied. Please try again or contact your manager.");
 		}
 	}
-	console.log("here4");
+	
 	let email = document.getElementById("email").value;
 	let password = document.getElementById("password").value;
 	

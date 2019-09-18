@@ -19,6 +19,7 @@ public class InfoDelegate {
 	
 	InfoService is = new InfoService();
 	UserService us = new UserService();
+	private String token;
 	
 	public void getAllInfo(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
 		
@@ -31,11 +32,11 @@ public class InfoDelegate {
 	
 	public void getInfoById(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
 		
-		String token = request.getHeader("Authorization");
+		token = request.getHeader("Authorization");
 		String[] tokenArr = token.split(":");
 		int id = us.getUser(tokenArr[0]).getId();
 		
-		Info info = is.getInfo(id);
+		Info info = is.getInfoByUserId(id);
 		
 		try(PrintWriter pw = response.getWriter()){
 			pw.write(new ObjectMapper().writeValueAsString(info));
@@ -44,7 +45,7 @@ public class InfoDelegate {
 	
 	public void updateInfo(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
 		
-		String token = request.getHeader("Authorization");
+		token = request.getHeader("Authorization");
 		String[] tokenArr = token.split(":");
 		int userId = us.getUser(tokenArr[0]).getId();
 		int infoId = is.getInfoByUserId(userId).getId();

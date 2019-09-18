@@ -67,7 +67,6 @@ public class ReimbursementDelegate {
 		List<User> managers = new ArrayList<User>();
 		List<User> users = us.getUsersByCompanyId(user.getCompanyId());
 		for (User u : users) {
-			System.out.println(u);
 			if (u.getPermissionLevel() > 0) {
 				managers.add(u);
 			}

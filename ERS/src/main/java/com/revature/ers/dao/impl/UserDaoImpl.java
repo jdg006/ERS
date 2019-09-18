@@ -20,8 +20,6 @@ public class UserDaoImpl implements UserDao {
 
 	public List<User> getUsers() {
 		
-		log.info("get users");
-		
 		String sql = "select * from \"ERS\".user";
 		
 		List <User> users = new ArrayList<User>();

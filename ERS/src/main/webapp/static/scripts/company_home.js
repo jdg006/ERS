@@ -2,8 +2,8 @@ let token = sessionStorage.getItem("token");
 
 document.getElementById("nav-emp").addEventListener("click", navEmp)
 document.getElementById("nav-man").addEventListener("click", navMan)
-document.getElementById("nav-admin").addEventListener("click", navAdmin)
-document.getElementById("nav-comp").addEventListener("click", navComp)
+//document.getElementById("nav-admin").addEventListener("click", navAdmin)
+//document.getElementById("nav-comp").addEventListener("click", navComp)
 
 function navEmp(){
 	let permissionLevel = token.split(":")[1];

@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.catalina.servlets.DefaultServlet;
 import org.apache.log4j.Logger;
 
+import com.revature.delegates.AuthDelegate;
+
 /**
  * Servlet implementation class FrontController
  */
@@ -19,6 +21,8 @@ public class FrontController extends DefaultServlet {
 	private static final long serialVersionUID = 1L;
 	
 	private RequestHelper rh = new RequestHelper();
+	
+	private AuthDelegate ad = new AuthDelegate();
        
     public FrontController() {
     	
@@ -26,23 +30,22 @@ public class FrontController extends DefaultServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		log.info(request.getHeader("Authorization"));
-		log.info("get request");
+
 		String path = request.getRequestURI().substring(request.getContextPath().length());
 		
-		if(path.startsWith("/static/")) {
-			
-			super.doGet(request, response);	
-		} else {
-			
-			rh.processGet(request, response);
-		}
-	
+			if(path.startsWith("/static/")) {
+				
+				super.doGet(request, response);	
+			} else {
+				
+				rh.processGet(request, response);
+				
+			}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		rh.processPost(request, response);
+			rh.processPost(request, response);
 	}
 	
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

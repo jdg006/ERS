@@ -19,7 +19,7 @@ public class InfoDaoImpl implements InfoDao {
 	private static Logger log = Logger.getRootLogger();
 
 	public List<Info> getAllInfo() {
-		log.info("all info");
+
 		String sql = "select * from \"ERS\".info";
 		
 		List <Info> allInfo = new ArrayList<Info>();

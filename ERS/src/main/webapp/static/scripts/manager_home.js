@@ -9,8 +9,8 @@ let managerInfoUrl = "http://localhost:8080/ERS/api/set_employee";
 
 document.getElementById("nav-emp").addEventListener("click", navEmp);
 document.getElementById("nav-man").addEventListener("click", navMan);
-document.getElementById("nav-admin").addEventListener("click", navAdmin);
-document.getElementById("nav-comp").addEventListener("click", navComp);
+//document.getElementById("nav-admin").addEventListener("click", navAdmin);
+//document.getElementById("nav-comp").addEventListener("click", navComp);
 document.getElementById("logout").addEventListener("click", logout);
 document.getElementById("apply-filter").addEventListener("click", applyFilter);
 
@@ -193,9 +193,8 @@ function setReimbursements(response){
 			row.appendChild(amount);
 			row.appendChild(date);
 			row.appendChild(reason);
-			
 			for (let manager of managers){
-				if(manager.userId = reimbursement.manId){
+				if(manager.userId == reimbursement.manId){
 					decidingManager.innerHTML = `${manager.firstName} ${manager.lastName}`;
 				}
 			}
@@ -231,7 +230,8 @@ function moveReimb(response){
 	console.log(manager);
 	let resolvedReimbursements = document.getElementById("resolved-reimbursements");
 	let row = document.createElement("tr");
-	row.id = "reimbursement"+ reimbursement.id;
+	row.className = "reimbursement";
+	row.id = "reimbursement"+"-"+ reimbursement.id +"-"+ reimbursement.empId;
 	let amount = document.createElement("td");
 	let date = document.createElement("td");
 	let reason = document.createElement("td");
