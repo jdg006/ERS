@@ -30,7 +30,7 @@ public class FrontController extends DefaultServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		response.addHeader("Access-Control-Allow-Origin", "*");
 		String path = request.getRequestURI().substring(request.getContextPath().length());
 		
 			if(path.startsWith("/static/")) {
